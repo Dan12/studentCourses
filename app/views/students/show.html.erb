@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1><%=@student.name%></h1>
+    <h3><%=@student.email%></h3>
+    <br>
+    <h4>
+      Enrolled In:
+    </h4>
+    <div class="list-group">
+      <%@student.enrollments.each do |enrollment|%>
+      <a href="/courses/<%=enrollment.course_id%>" class="list-group-item ">
+        <h4 class="list-group-item-heading"><%=Course.find_by(id: enrollment.course_id).name%></h4>  
+      </a>
+      <%end%>
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <a href="/students/<%= @student.id %>/edit">Edit</a> |
+    <a href="/students/<%= @student.id %>/destroy">Destroy</a> |
+    <a href="/">Home</a>
+  </div>
+</div>

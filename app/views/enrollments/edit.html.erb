@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Edit Enrollment</h1>
+    <form action="/enrollments/<%= @enrollment.id %>/update">
+      <div class="form-group">
+        <label for="idea" class="control-label">course_id</label>
+        <input type="text" name="course_id" class="form-control" placeholder="1" value="<%= @enrollment.course_id  %>">
+      </div>
+      <div class="form-group">
+        <label for="idea" class="control-label">student_id</label>
+        <input type="text" name="student_id" class="form-control" placeholder="1" value="<%= @enrollment.student_id  %>">
+      </div>
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+</div>
+
+
